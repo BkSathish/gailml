@@ -161,8 +161,8 @@ if st.sidebar.checkbox("Deviations"):
     st.subheader("Deviation plot")  
     for feature in ['time', 'measurement','control_mode','binary_result']:
         ax = plt.subplot()
-        st.write(sns.distplot(df[feature][df.binary_result == 1], bins=50, label='Anormal',kde_kws={'bw':0.02}))
-        st.write(sns.distplot(df[feature][df.binary_result == 0], bins=50, label='Normal',kde_kws={'bw':0.02}))
+        st.write(sns.distplot(df[feature][df.binary_result == 0], bins=50, label='Abnormal',kde_kws={'bw':0.02}))
+        st.write(sns.distplot(df[feature][df.binary_result == 1], bins=50, label='Normal',kde_kws={'bw':0.02}))
         ax.set_xlabel('')
         ax.set_title('histogram of feature: ' + str(feature))
         plt.legend(loc='best')
