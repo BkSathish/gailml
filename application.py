@@ -177,9 +177,9 @@ st.write("Accuracy in Detecting falsenegative Alarm:", out_accuracy_isf)
 
 
 if st.sidebar.checkbox("Alarm Report", False):
-    st.subheader("classification of Alarm")
-    fig, (ax1,ax2)= plt.subplots(1,2,figsize=[16,3])
-    ax1.set_title("Accuracy of Isolation Forest",fontsize=20)
+    st.subheader("Alarms generated in the report")
+    fig, (ax1)= plt.subplots(1,figsize=[16,3])
+    ax1.set_title("Accuracy",fontsize=20)
     st.write(sns.barplot(x=[in_accuracy_isf,out_accuracy_isf], y=['falsepositive Alarm', 'falsenegative Alarm'], label="classifiers",  color="b", ax=ax1))
     ax1.set(xlim=(0,1))
    
